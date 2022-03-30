@@ -17,6 +17,7 @@
         style = _ref.style,
         _ref$className = _ref.className,
         className = _ref$className === void 0 ? '' : _ref$className,
+        disabled = _ref.disabled,
         buttonText = _ref.buttonText,
         buttonType = _ref.buttonType;
     return /*#__PURE__*/React__default.createElement(React__default.Fragment, null, /*#__PURE__*/React__default.createElement("button", {
@@ -31,6 +32,7 @@
         height: '25px'
       },
       className: className,
+      disabled: disabled,
       onClick: function onClick() {
         return myWidgetFunction();
       }
@@ -3796,6 +3798,8 @@
         widgetStyles = _ref$widgetStyles === void 0 ? null : _ref$widgetStyles,
         _ref$className = _ref.className,
         className = _ref$className === void 0 ? '' : _ref$className,
+        _ref$disabled = _ref.disabled,
+        disabled = _ref$disabled === void 0 ? false : _ref$disabled,
         _ref$folder = _ref.folder,
         folder = _ref$folder === void 0 ? null : _ref$folder,
         _ref$cropping = _ref.cropping,
@@ -3844,7 +3848,8 @@
       buttonText: buttonText,
       buttonType: buttonType,
       style: style,
-      className: className
+      className: className,
+      disabled: disabled
     });
   };
 

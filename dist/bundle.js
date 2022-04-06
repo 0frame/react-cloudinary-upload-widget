@@ -3694,7 +3694,7 @@
   };
 
   var myWidget = function myWidget(sources, sourceKeys, resourceType, cloudName, uploadPreset, folder, cropping, generateSignatureUrl, onSuccess, onFailure, logging, customPublicId, eager, apiKey, accepts, contentType, withCredentials, use_filename, unique_filename, googleDriveClientId, multiple, widgetStyles, destroy, autoClose, // Necessary props
-  thumbnails, croppingAspectRatio, croppingShowDimensions, clientAllowedFormats, maxFileSize, maxImageWidth, maxImageHeight, minImageWidth, minImageHeight, maxVideoFileSize, maxRawFileSize, showPoweredBy, showAdvancedOptions) {
+  thumbnails, croppingAspectRatio, croppingShowDimensions, clientAllowedFormats, maxFileSize, maxImageWidth, maxImageHeight, minImageWidth, minImageHeight, maxImageFileSize, maxVideoFileSize, maxRawFileSize, showPoweredBy, showAdvancedOptions) {
     var widget = !!window.cloudinary && window.cloudinary.createUploadWidget(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({
       showCompletedButton: true,
       multiple: multiple,
@@ -3720,6 +3720,7 @@
       maxImageHeight: maxImageHeight,
       minImageWidth: minImageWidth,
       minImageHeight: minImageHeight,
+      maxImageFileSize: maxImageFileSize,
       maxVideoFileSize: maxVideoFileSize,
       maxRawFileSize: maxRawFileSize
     }, generateSignatureUrl && {
@@ -3859,6 +3860,7 @@
         maxImageHeight = _ref.maxImageHeight,
         minImageWidth = _ref.minImageWidth,
         minImageHeight = _ref.minImageHeight,
+        maxImageFileSize = _ref.maxImageFileSize,
         maxVideoFileSize = _ref.maxVideoFileSize,
         maxRawFileSize = _ref.maxRawFileSize,
         showPoweredBy = _ref.showPoweredBy,
@@ -3867,7 +3869,7 @@
     // * put all new variables at the end
     var myWidgetFunction = function myWidgetFunction() {
       return myWidget(sources, sourceKeys, resourceType, cloudName, uploadPreset, folder, cropping, generateSignatureUrl, onSuccess, onFailure, logging, customPublicId, eager, apiKey, accepts, contentType, withCredentials, use_filename, unique_filename, googleDriveClientId, multiple, widgetStyles, destroy, autoClose, // Necessary props
-      thumbnails, croppingAspectRatio, croppingShowDimensions, clientAllowedFormats, maxFileSize, maxImageWidth, maxImageHeight, minImageWidth, minImageHeight, maxVideoFileSize, maxRawFileSize, showPoweredBy, showAdvancedOptions);
+      thumbnails, croppingAspectRatio, croppingShowDimensions, clientAllowedFormats, maxFileSize, maxImageWidth, maxImageHeight, minImageWidth, minImageHeight, maxImageFileSize, maxVideoFileSize, maxRawFileSize, showPoweredBy, showAdvancedOptions);
     };
 
     return /*#__PURE__*/React__default.createElement(WidgetButton, {

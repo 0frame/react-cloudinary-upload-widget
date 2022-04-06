@@ -31,7 +31,20 @@ const UploadWidget = ({
   multiple = false,
   buttonType = 'button',
   destroy = false,
-  autoClose = true
+  autoClose = true,
+  thumbnails,
+  croppingAspectRatio,
+  croppingShowDimensions,
+  clientAllowedFormats,
+  maxFileSize,
+  maxImageWidth,
+  maxImageHeight,
+  minImageWidth,
+  minImageHeight,
+  maxVideoFileSize,
+  maxRawFileSize,
+  showPoweredBy,
+  showAdvancedOptions
 }) => {
   // * put all new variables at the end
   const myWidgetFunction = () =>
@@ -59,7 +72,21 @@ const UploadWidget = ({
       multiple,
       widgetStyles,
       destroy,
-      autoClose
+      autoClose,
+      // Necessary props
+      thumbnails,
+      croppingAspectRatio,
+      croppingShowDimensions,
+      clientAllowedFormats,
+      maxFileSize,
+      maxImageWidth,
+      maxImageHeight,
+      minImageWidth,
+      minImageHeight,
+      maxVideoFileSize,
+      maxRawFileSize,
+      showPoweredBy,
+      showAdvancedOptions
     )
 
   return (

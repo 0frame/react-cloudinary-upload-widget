@@ -25,7 +25,21 @@ const myWidget = (
   multiple,
   widgetStyles,
   destroy,
-  autoClose
+  autoClose,
+  // Necessary props
+  thumbnails,
+  croppingAspectRatio,
+  croppingShowDimensions,
+  clientAllowedFormats,
+  maxFileSize,
+  maxImageWidth,
+  maxImageHeight,
+  minImageWidth,
+  minImageHeight,
+  maxVideoFileSize,
+  maxRawFileSize,
+  showPoweredBy,
+  showAdvancedOptions
 ) => {
   const widget =
     !!window.cloudinary &&
@@ -34,8 +48,8 @@ const myWidget = (
         showCompletedButton: true,
         multiple: multiple,
         singleUploadAutoClose: autoClose,
-        showAdvancedOptions: true,
-        showPoweredBy: false,
+        showAdvancedOptions: showAdvancedOptions,
+        showPoweredBy: showPoweredBy,
         styles: widgetStyles,
         googleDriveClientId: googleDriveClientId,
         sources: sources,
@@ -45,6 +59,18 @@ const myWidget = (
         folder: folder,
         cropping: cropping,
         resourceType: resourceType,
+        // Necessary props
+        thumbnails,
+        croppingAspectRatio,
+        croppingShowDimensions,
+        clientAllowedFormats,
+        maxFileSize,
+        maxImageWidth,
+        maxImageHeight,
+        minImageWidth,
+        minImageHeight,
+        maxVideoFileSize,
+        maxRawFileSize,
         ...(generateSignatureUrl && { use_filename: use_filename }),
         ...(generateSignatureUrl && { eager: eager }),
         ...(generateSignatureUrl && { unique_filename: unique_filename }),

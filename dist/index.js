@@ -3697,13 +3697,14 @@ var generateSignature = function generateSignature(cb, params, _ref, logging) {
   });
 };
 
-var myWidget = function myWidget(sources, sourceKeys, resourceType, cloudName, uploadPreset, folder, cropping, generateSignatureUrl, onSuccess, onFailure, logging, customPublicId, eager, apiKey, accepts, contentType, withCredentials, use_filename, unique_filename, googleDriveClientId, multiple, widgetStyles, destroy, autoClose) {
+var myWidget = function myWidget(sources, sourceKeys, resourceType, cloudName, uploadPreset, folder, cropping, generateSignatureUrl, onSuccess, onFailure, logging, customPublicId, eager, apiKey, accepts, contentType, withCredentials, use_filename, unique_filename, googleDriveClientId, multiple, widgetStyles, destroy, autoClose, // Necessary props
+thumbnails, croppingAspectRatio, croppingShowDimensions, clientAllowedFormats, maxFileSize, maxImageWidth, maxImageHeight, minImageWidth, minImageHeight, maxVideoFileSize, maxRawFileSize, showPoweredBy, showAdvancedOptions) {
   var widget = !!window.cloudinary && window.cloudinary.createUploadWidget(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({
     showCompletedButton: true,
     multiple: multiple,
     singleUploadAutoClose: autoClose,
-    showAdvancedOptions: true,
-    showPoweredBy: false,
+    showAdvancedOptions: showAdvancedOptions,
+    showPoweredBy: showPoweredBy,
     styles: widgetStyles,
     googleDriveClientId: googleDriveClientId,
     sources: sources
@@ -3712,7 +3713,19 @@ var myWidget = function myWidget(sources, sourceKeys, resourceType, cloudName, u
     uploadPreset: uploadPreset,
     folder: folder,
     cropping: cropping,
-    resourceType: resourceType
+    resourceType: resourceType,
+    // Necessary props
+    thumbnails: thumbnails,
+    croppingAspectRatio: croppingAspectRatio,
+    croppingShowDimensions: croppingShowDimensions,
+    clientAllowedFormats: clientAllowedFormats,
+    maxFileSize: maxFileSize,
+    maxImageWidth: maxImageWidth,
+    maxImageHeight: maxImageHeight,
+    minImageWidth: minImageWidth,
+    minImageHeight: minImageHeight,
+    maxVideoFileSize: maxVideoFileSize,
+    maxRawFileSize: maxRawFileSize
   }, generateSignatureUrl && {
     use_filename: use_filename
   }), generateSignatureUrl && {
@@ -3840,11 +3853,25 @@ var UploadWidget = function UploadWidget(_ref) {
       _ref$destroy = _ref.destroy,
       destroy = _ref$destroy === void 0 ? false : _ref$destroy,
       _ref$autoClose = _ref.autoClose,
-      autoClose = _ref$autoClose === void 0 ? true : _ref$autoClose;
+      autoClose = _ref$autoClose === void 0 ? true : _ref$autoClose,
+      thumbnails = _ref.thumbnails,
+      croppingAspectRatio = _ref.croppingAspectRatio,
+      croppingShowDimensions = _ref.croppingShowDimensions,
+      clientAllowedFormats = _ref.clientAllowedFormats,
+      maxFileSize = _ref.maxFileSize,
+      maxImageWidth = _ref.maxImageWidth,
+      maxImageHeight = _ref.maxImageHeight,
+      minImageWidth = _ref.minImageWidth,
+      minImageHeight = _ref.minImageHeight,
+      maxVideoFileSize = _ref.maxVideoFileSize,
+      maxRawFileSize = _ref.maxRawFileSize,
+      showPoweredBy = _ref.showPoweredBy,
+      showAdvancedOptions = _ref.showAdvancedOptions;
 
   // * put all new variables at the end
   var myWidgetFunction = function myWidgetFunction() {
-    return myWidget(sources, sourceKeys, resourceType, cloudName, uploadPreset, folder, cropping, generateSignatureUrl, onSuccess, onFailure, logging, customPublicId, eager, apiKey, accepts, contentType, withCredentials, use_filename, unique_filename, googleDriveClientId, multiple, widgetStyles, destroy, autoClose);
+    return myWidget(sources, sourceKeys, resourceType, cloudName, uploadPreset, folder, cropping, generateSignatureUrl, onSuccess, onFailure, logging, customPublicId, eager, apiKey, accepts, contentType, withCredentials, use_filename, unique_filename, googleDriveClientId, multiple, widgetStyles, destroy, autoClose, // Necessary props
+    thumbnails, croppingAspectRatio, croppingShowDimensions, clientAllowedFormats, maxFileSize, maxImageWidth, maxImageHeight, minImageWidth, minImageHeight, maxVideoFileSize, maxRawFileSize, showPoweredBy, showAdvancedOptions);
   };
 
   return /*#__PURE__*/React__default.createElement(WidgetButton, {
@@ -3871,7 +3898,8 @@ var useScript = (function (url) {
 });
 
 var WidgetLoader = function WidgetLoader() {
-  return /*#__PURE__*/React__default.createElement(React__default.Fragment, null, useScript('https://widget.cloudinary.com/v2.0/global/all.js'));
+  useScript('https://widget.cloudinary.com/v2.0/global/all.js');
+  return /*#__PURE__*/React__default.createElement(React__default.Fragment, null, " ");
 };
 var Widget = function Widget(props) {
   return /*#__PURE__*/React__default.createElement(UploadWidget, props);
